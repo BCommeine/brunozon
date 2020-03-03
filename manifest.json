@@ -18,6 +18,6 @@
     }
   ],
   "web_accessible_resources": [
-    "icons/brunozon-logo.png"
+    "icons/brunozon-logo.png", "icons/brunozon-logo-inverted.png"
   ]
 }

@@ -51,17 +51,22 @@ function walkAndObserve(doc) {
 
     let logos = document.querySelectorAll(".a-icon");
     for (let l of logos) {
-        l.style.backgroundImage = 'url("' + browser.extension.getURL("icons/brunozon-logo.png") + '")';
+        if (! (l.classList.contains("a-icon-next-rounded") || l.classList.contains('a-icon-previous-rounded'))) {
+            l.style.backgroundImage = 'url("' + browser.extension.getURL("icons/brunozon-logo.png") + '")';
+            l.style.backgroundSize =  'cover';
+            l.style.backgroundPosition =  '0px 0px';
+            l.style.height =  '38px';
+        }
+    }
+
+    logos = document.querySelectorAll(".nav-logo-base");
+    for (let l of logos) {
+        l.style.backgroundImage = 'url("' + browser.extension.getURL("icons/brunozon-logo-inverted.png") + '")';
         l.style.backgroundSize =  'cover';
         l.style.backgroundPosition =  '0px 0px';
         l.style.height =  '38px';
+        l.style.width =  '100px';
     }
-
-    // logos = document.querySelectorAll(".nav-sprite");
-    // for (let l of logos) {
-    //     l.style.backgroundImage = 'url("' + browser.extension.getURL("icons/brunozon-logo.png") + '")';
-    //     l.style.backgroundSize =  'contain';
-    // }
 
     var docTitle = doc.getElementsByTagName('title')[0],
     observerConfig = {
