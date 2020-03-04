@@ -1,6 +1,6 @@
 function walk(rootNode){
     // Find all the text nodes in rootNode
-    var walker = document.createTreeWalker(
+    const walker = document.createTreeWalker(
         rootNode,
         NodeFilter.SHOW_TEXT,
         null,
@@ -16,7 +16,7 @@ function walk(rootNode){
 }
 
 function handleText(textNode){
-    var v = textNode.wholeText;
+    let v = textNode.wholeText;
 
     v = v.replace(/\bAmazon([A-Za-z]*)\b/g, "Brunozon$1");
     v = v.replace(/\bamazon([A-Za-z]*)\b/g, "brunozon$1");
@@ -26,11 +26,8 @@ function handleText(textNode){
 
 // The callback used for the document body and title observers
 function observerCallback(mutations) {
-
-    var i;
-
     mutations.forEach(function(mutation) {
-        for (i = 0; i < mutation.addedNodes.length; i++) {
+        for (let i = 0; i < mutation.addedNodes.length; i++) {
             if (mutation.addedNodes[i].nodeType === 3) {
                 // Replace the text for text nodes
                 handleText(mutation.addedNodes[i]);
@@ -48,7 +45,6 @@ function observerCallback(mutations) {
 
 // Walk the doc (document) body, replace the title, and observe the body and title
 function walkAndObserve(doc) {
-
     let logos = document.querySelectorAll(".a-icon");
     for (let l of logos) {
         if (! (l.classList.contains("a-icon-next-rounded") || l.classList.contains('a-icon-previous-rounded'))) {
@@ -68,7 +64,7 @@ function walkAndObserve(doc) {
         l.style.width =  '100px';
     }
 
-    var docTitle = doc.getElementsByTagName('title')[0],
+    const docTitle = doc.getElementsByTagName('title')[0],
     observerConfig = {
         characterData: true,
         childList: true,
