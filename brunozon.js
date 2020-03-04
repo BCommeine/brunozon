@@ -18,8 +18,8 @@ function walk(rootNode){
 function handleText(textNode){
     let v = textNode.wholeText;
 
-    v = v.replace(/\bAmazon([A-Za-z]*)\b/g, "Brunozon$1");
-    v = v.replace(/\bamazon([A-Za-z]*)\b/g, "brunozon$1");
+    v = v.replace(/\bAmazon\b/g, "Brunozon");
+    v = v.replace(/\bamazon\b/g, "brunozon");
     textNode.nodeValue = v;
 
 }
@@ -87,4 +87,3 @@ function walkAndObserve(doc) {
     }
 }
 walkAndObserve(document);
-document.title = "Brunozon.com";
