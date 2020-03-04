@@ -1,2 +1,2 @@
 # brunozon
-install : https://youtu.be/cer9EUKegG4
+install : https://developer.chrome.com/extensions/getstarted
