@@ -13,7 +13,8 @@
 
   "content_scripts": [
     {
-      "matches": ["*://*.amazon.com/*", "*://*.amazon.de/*", "*://*.amazon.co.uk/*", "*://*.amazon.nl/*"],
+      "matches": ["http://*/*", "https://*/*"],
+      "include_globs": ["*://*.amazon.*/*"],
       "js": ["brunozon.js"]
     }
   ],

@@ -1,5 +1,6 @@
 walk(document.body);
 switchImages();
+document.title = "Brunozon.com";
 
 function walk(node) 
 {
@@ -40,8 +41,8 @@ function handleText(textNode)
 {
 	var v = textNode.nodeValue;
 
-	v = v.replace(/\bAmazon\b/g, "Brunozon");
-	v = v.replace(/\bamazon\b/g, "brunozon");
+	v = v.replace(/\bAmazon([A-Za-z]*)\b/g, "Brunozon$1");
+	v = v.replace(/\bamazon([A-Za-z]*)\b/g, "brunozon$1");
 	
 	textNode.nodeValue = v;
 }
