@@ -1,2 +1,2 @@
 # brunozon
-install : https://youtu.be/cer9EUKegG4
+install : https://www.youtube.com/watch?v=dQw4w9WgXcQ
